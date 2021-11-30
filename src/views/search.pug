@@ -1,0 +1,17 @@
+extends base
+include ./mixins/player 
+include ./mixins/chat
+
+block content 
+    form(method="GET" action="")
+        input(name="playerID", placeholder="Search by ID", required)
+        input(value="Search", type="submit")
+
+    if player
+        +player(player)
+    hr
+
+    if chats
+        h3 Chat contents
+        each chat in chats
+            +chat(chat)
