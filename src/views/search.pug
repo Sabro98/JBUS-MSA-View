@@ -7,11 +7,17 @@ block content
         input(name="playerID", placeholder="Search by ID", required)
         input(value="Search", type="submit")
 
-    if player
-        +player(player)
-    hr
+    if playerErr != ""
+        h2=playerErr 
+    else 
+        if player
+            +player(player)
+        hr
 
-    if chats
-        h3 Chat contents
-        each chat in chats
-            +chat(chat)
+    if chatErr != ""
+        h2=chatErr 
+    else 
+        if chats
+            h3 Chat history
+            each chat in chats
+                +chat(chat)

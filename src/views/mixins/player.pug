@@ -1,8 +1,9 @@
 mixin player(player)
-    h3 Player's ID
+    img(src=player.avatarURL)
+    h2 Player's ID
     h4= player.playerID
-    h3 Player's NickName
+    h2 Player's nickname
     span= player.playerNickName
     br
-    h3 Player's Group
-    small= player.playerGroup
+    h2 Player's group
+    span= player.playerGroup
